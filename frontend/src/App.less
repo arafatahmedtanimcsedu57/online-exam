@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Satisfy&display=swap");
+iframe#webpack-dev-server-client-overlay {
+  display: none !important;
+}
+
+body {
+  margin: 0 auto !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(194, 194, 194);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(194, 194, 194);
+}
+
+main {
+  overflow: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 !important;
+}
+
+.ant-layout {
+  // background-color: #f6f8fb;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.ant-layout-content {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  margin: 0 !important;
+
+  @media screen and (min-width: 992px) {
+    padding: 16px;
+  }
+}
+
+.ant-layout-sider {
+  background-color: unset !important;
+  margin: unset;
+  border-radius: 8px;
+  // box-shadow: 0px 0px 10px #6d6d6dfd;
+
+  @media screen and (min-width: 992px) {
+    margin: 16px;
+  }
+}
+
+.ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+}
+
+.ant-menu {
+  background-color: transparent !important;
+  border-inline-end: none !important;
+}
+
+.ant-layout-header {
+  padding: 16px;
+  background-color: unset !important;
+  flex-wrap: wrap;
+  min-height: 64px;
+  height: unset !important;
+}
+
+.ant-card {
+  // box-shadow: 0px 0px 50px #d6dbe7fd;
+  // min-width: 250px;
+  width: 100%;
+  max-width: 1200px;
+  height: fit-content;
+
+  &-body {
+    padding: 24px !important;
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 100%;
+  }
+}
+
+.ant-btn {
+  font-weight: bold;
+}
+
+.ant-table {
+  margin-top: 24px !important;
+}
+
+.ant-steps {
+  margin: 24px 0 !important;
+}
+
+.ant-transfer-list {
+  width: 100% !important;
+}
+
+.ant-tag {
+  width: fit-content;
+}

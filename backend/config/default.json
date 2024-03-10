@@ -1,0 +1,12 @@
+{
+  "mongodb": {
+    "connectionString": "mongodb://localhost:27017/exam-system"
+  },
+  "jwt": {
+    "secret": "Examination Portal Application"
+  },
+  "mail-credentials": {
+    "userId": "online.exam.system.57@gmail.com",
+    "password": "niec ymwe dumh rdfa"
+  }
+}
