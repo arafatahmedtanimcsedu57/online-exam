@@ -38,10 +38,13 @@ const TraineeRegistration = () => {
   const [inform, setInform] = useState(true);
   const [testId, setTestId] = useState(null);
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => setTestId(localTestId), []);
 
   const handleSubmit = (values) => {
+    setLoading(true);
+
     Post({
       url: `${apis.TRAINEE}/registration`,
       data: {
@@ -58,8 +61,12 @@ const TraineeRegistration = () => {
           setInform(false);
           setUser(data.data.user);
         } else messageApi.error(data.data.message);
+        setLoading(false);
       })
-      .catch(() => messageApi.error("Server Error"));
+      .catch(() => {
+        messageApi.error("Server Error")
+        setLoading(false)
+      });
   };
 
   const resendMail = () => {
@@ -112,7 +119,7 @@ const TraineeRegistration = () => {
               <Input />
             </Form.Item>
             <Form.Item {...buttonSectionStruct}>
-              <Button {...buttonStruct}>Register</Button>
+              <Button {...buttonStruct} loading={ loading}>Register</Button>
             </Form.Item>
           </Form>
         </Card>

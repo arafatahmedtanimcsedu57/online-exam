@@ -37,10 +37,30 @@ let registration = (req, res, _) => {
             ],
           }).then((data) => {
             if (data) {
-              res.json({
-                success: false,
-                message: "This id has already been registered for this test!",
-              });
+              const { testId, _id } = data;
+              
+               sendmail(
+                    emailId,
+                    "Registered Successfully",
+                    `You have been successfully registered for the test. Click on the link given to take test  "${
+                      req.protocol + "://" + req.get("host")
+                    }/trainee/taketest?testId=${testId}&traineeId=${
+                      _id
+                    }"`
+                  )
+                    .then(() => {
+                      console.log("MAIL SEND");
+
+                      return res.json({
+                        success: true,
+                        message: `Trainee registered successfully!`,
+                        user: data,
+                      })
+                    })
+                    .catch((err) => {  
+                      console.log("MAIL NOT SEND", err);
+                    });
+              
             } else {
               var newTrainee = TraineeEnterModel({
                 name,
